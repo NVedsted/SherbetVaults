@@ -14,6 +14,8 @@ namespace SherbetVaults.Models.Config
         public bool LargestVaultIsDefault = false;
         public string DefaultVault = "default";
         public bool VaultAliasesEnabled = false;
+        public string VaultItemsTableName { get; set; } = "SherbetVaults_Items";
+        public string VaultAliasTableName { get; set; } = "SherbetVaults_Aliases";
 
         [XmlArrayItem(ElementName = "Vault")]
         public List<VaultConfig> Vaults = new();

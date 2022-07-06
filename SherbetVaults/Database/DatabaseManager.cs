@@ -10,10 +10,10 @@ namespace SherbetVaults.Database
 
         public DatabaseManager(SherbetVaultsPlugin plugin) : base(plugin.Config.DatabaseSettings, autoInit: false, singleConnectionMode: plugin.Config.SingletonDatabaseConnection)
         {
-            VaultItems = new VaultItemsTable(plugin, "SherbetVaults_Items");
+            VaultItems = new VaultItemsTable(plugin, plugin.Config.VaultItemsTableName);
 
             if (plugin.Config.VaultAliasesEnabled)
-                Aliases = new VaultAliasTable("SherbetVaults_Aliases");
+                Aliases = new VaultAliasTable(plugin.Config.VaultAliasTableName);
 
             Init();
         }
